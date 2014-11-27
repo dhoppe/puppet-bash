@@ -1,0 +1,12 @@
+#
+# THIS FILE IS MANAGED BY PUPPET
+# /etc/puppet/environments/production/modules/bash/files/common/etc/skel/bash_aliases
+#
+
+alias cl='clear'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias l='ls --color -l'
+alias la='ls --color -la'
+alias lh='ls --color -lh'

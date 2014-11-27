@@ -1,0 +1,13 @@
+---
+bash::config_file_template: "bash/%{::lsbdistcodename}/etc/skel/bashrc.erb"
+bash::config_file_hash:
+  '.bash_aliases_skel':
+    config_file_path:     '/etc/skel/.bash_aliases'
+    config_file_source:   'puppet:///modules/bash/common/etc/skel/bash_aliases'
+  '.bash_aliases_root':
+    config_file_path:     '/root/.bash_aliases'
+    config_file_source:   'puppet:///modules/bash/common/etc/skel/bash_aliases'
+  '.bashrc':
+    config_file_path:     '/root/.bashrc'
+    config_file_template: "bash/%{::lsbdistcodename}/etc/skel/bashrc.erb"
+bash::color_prompt: '\[\033[01;34m\]'
