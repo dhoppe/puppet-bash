@@ -102,23 +102,6 @@ describe 'bash', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
       end
     end
 
-    context 'when content string' do
-      it 'is_expected.to work with no errors' do
-        pp = <<-EOS
-          class { 'bash':
-            config_file_string => '# THIS FILE IS MANAGED BY PUPPET',
-          }
-        EOS
-
-        apply_manifest(pp, :catch_failures => true)
-      end
-
-      describe file(config_file_path) do
-        it { is_expected.to be_file }
-        it { is_expected.to contain 'THIS FILE IS MANAGED BY PUPPET' }
-      end
-    end
-
     context 'when content template' do
       it 'is_expected.to work with no errors' do
         pp = <<-EOS
