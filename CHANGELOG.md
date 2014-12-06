@@ -1,3 +1,7 @@
+## 2014-12-06 Release 1.0.2
+### Summary:
+- [Rspec] Made some changes to the build environment
+
 ## 2014-11-28 Release 1.0.1
 ### Summary:
 - [Beaker] Remove test
