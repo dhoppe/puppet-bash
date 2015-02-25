@@ -274,7 +274,7 @@ Determines which color (prompt) should be used. Defaults to '\[\033[01;32m\]'.
 
 This module has been tested on:
 
-* Debian 6/7
+* Debian 6/7/8
 * Ubuntu 12.04/14.04
 
 ## Development
