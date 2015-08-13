@@ -11,6 +11,7 @@ describe 'bash::define', :type => :define do
     context "on #{osfamily}" do
       context 'when source file' do
         let(:params) {{
+          :config_file_path   => '/etc/skel/.bashrc.2nd',
           :config_file_source => 'puppet:///modules/bash/wheezy/etc/skel/bashrc',
         }}
 
@@ -25,6 +26,7 @@ describe 'bash::define', :type => :define do
 
       context 'when content string' do
         let(:params) {{
+          :config_file_path   => '/etc/skel/.bashrc.3rd',
           :config_file_string => '# THIS FILE IS MANAGED BY PUPPET',
         }}
 
@@ -39,6 +41,7 @@ describe 'bash::define', :type => :define do
 
       context 'when content template' do
         let(:params) {{
+          :config_file_path     => '/etc/skel/.bashrc.4th',
           :config_file_template => 'bash/wheezy/etc/skel/bashrc.erb',
         }}
 
@@ -53,6 +56,7 @@ describe 'bash::define', :type => :define do
 
       context 'when content template (custom)' do
         let(:params) {{
+          :config_file_path         => '/etc/skel/.bashrc.5th',
           :config_file_template     => 'bash/wheezy/etc/skel/bashrc.erb',
           :config_file_options_hash => {
             'key' => 'value',
