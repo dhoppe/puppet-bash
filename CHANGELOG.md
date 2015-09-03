@@ -1,3 +1,7 @@
+## 2015-09-03 Release 1.0.7
+### Summary:
+- [Puppet] Allow the parameter hostname_prompt to be configured for the user root as well
+
 ## 2015-09-03 Release 1.0.6
 ### Summary:
 - [Puppet] Allow the parameter hostname_prompt to be configured
