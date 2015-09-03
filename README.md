@@ -270,6 +270,10 @@ Determines which color (prompt) should be used. Defaults to '\[\033[01;32m\]'.
 * '\[\033[01;36m\]' # cyan
 * '\[\033[01;37m\]' # white
 
+#### `hostname_prompt`
+
+Determines which hostname (prompt) should be used. Defaults to '\h'.
+
 ## Limitations
 
 This module has been tested on:

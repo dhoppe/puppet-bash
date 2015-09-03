@@ -1,3 +1,7 @@
+## 2015-09-03 Release 1.0.6
+### Summary:
+- [Puppet] Allow the parameter hostname_prompt to be configured
+
 ## 2015-08-13 Release 1.0.5
 ### Summary:
 - [Beaker] Update Beaker environment
