@@ -24,6 +24,7 @@ class bash (
   $config_file_options_hash = {},
 
   $color_prompt             = '\[\033[01;32m\]',
+  $hostname_prompt          = '\h',
 ) inherits ::bash::params {
   validate_re($package_ensure, '^(absent|latest|present|purged)$')
   validate_string($package_name)
