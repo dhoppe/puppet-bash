@@ -17,9 +17,9 @@ describe 'bash', :type => :class do
       describe 'bash::install' do
         context 'defaults' do
           it do
-            is_expected.to contain_package('bash').with({
+            is_expected.to contain_package('bash').with(
               'ensure' => 'present',
-            })
+            )
           end
         end
 
@@ -29,9 +29,9 @@ describe 'bash', :type => :class do
           }}
 
           it do
-            is_expected.to contain_package('bash').with({
+            is_expected.to contain_package('bash').with(
               'ensure' => 'latest',
-            })
+            )
           end
         end
 
@@ -41,15 +41,15 @@ describe 'bash', :type => :class do
           }}
 
           it do
-            is_expected.to contain_package('bash').with({
+            is_expected.to contain_package('bash').with(
               'ensure' => 'absent',
-            })
+            )
           end
           it do
-            is_expected.to contain_file('bash.conf').with({
+            is_expected.to contain_file('bash.conf').with(
               'ensure'  => 'present',
               'require' => 'Package[bash]',
-            })
+            )
           end
         end
 
@@ -59,15 +59,15 @@ describe 'bash', :type => :class do
           }}
 
           it do
-            is_expected.to contain_package('bash').with({
+            is_expected.to contain_package('bash').with(
               'ensure' => 'purged',
-            })
+            )
           end
           it do
-            is_expected.to contain_file('bash.conf').with({
+            is_expected.to contain_file('bash.conf').with(
               'ensure'  => 'absent',
               'require' => 'Package[bash]',
-            })
+            )
           end
         end
       end
@@ -75,10 +75,10 @@ describe 'bash', :type => :class do
       describe 'bash::config' do
         context 'defaults' do
           it do
-            is_expected.to contain_file('bash.conf').with({
+            is_expected.to contain_file('bash.conf').with(
               'ensure'  => 'present',
               'require' => 'Package[bash]',
-            })
+            )
           end
         end
 
@@ -88,14 +88,14 @@ describe 'bash', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('bash.dir').with({
+            is_expected.to contain_file('bash.dir').with(
               'ensure'  => 'directory',
               'force'   => false,
               'purge'   => false,
               'recurse' => true,
               'source'  => 'puppet:///modules/bash/wheezy/etc/skel',
               'require' => 'Package[bash]',
-            })
+            )
           end
         end
 
@@ -106,14 +106,14 @@ describe 'bash', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('bash.dir').with({
+            is_expected.to contain_file('bash.dir').with(
               'ensure'  => 'directory',
               'force'   => true,
               'purge'   => true,
               'recurse' => true,
               'source'  => 'puppet:///modules/bash/wheezy/etc/skel',
               'require' => 'Package[bash]',
-            })
+            )
           end
         end
 
@@ -123,11 +123,11 @@ describe 'bash', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('bash.conf').with({
+            is_expected.to contain_file('bash.conf').with(
               'ensure'  => 'present',
               'source'  => 'puppet:///modules/bash/wheezy/etc/skel/bashrc',
               'require' => 'Package[bash]',
-            })
+            )
           end
         end
 
@@ -137,11 +137,11 @@ describe 'bash', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('bash.conf').with({
+            is_expected.to contain_file('bash.conf').with(
               'ensure'  => 'present',
               'content' => /THIS FILE IS MANAGED BY PUPPET/,
               'require' => 'Package[bash]',
-            })
+            )
           end
         end
 
@@ -151,11 +151,11 @@ describe 'bash', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('bash.conf').with({
+            is_expected.to contain_file('bash.conf').with(
               'ensure'  => 'present',
               'content' => /THIS FILE IS MANAGED BY PUPPET/,
               'require' => 'Package[bash]',
-            })
+            )
           end
         end
 
@@ -168,11 +168,11 @@ describe 'bash', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('bash.conf').with({
+            is_expected.to contain_file('bash.conf').with(
               'ensure'  => 'present',
               'content' => /THIS FILE IS MANAGED BY PUPPET/,
               'require' => 'Package[bash]',
-            })
+            )
           end
         end
       end

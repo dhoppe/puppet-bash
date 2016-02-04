@@ -48,43 +48,43 @@ describe 'bash', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
       end
     end
 
-#    context 'when package absent' do
-#      it 'is_expected.to work with no errors' do
-#        pp = <<-EOS
-#          class { 'bash':
-#            package_ensure => 'absent',
-#          }
-#        EOS
-#
-#        apply_manifest(pp, :catch_failures => true)
-#      end
-#
-#      describe package(package_name) do
-#        it { is_expected.not_to be_installed }
-#      end
-#      describe file(config_file_path) do
-#        it { is_expected.to be_file }
-#      end
-#    end
-#
-#    context 'when package purged' do
-#      it 'is_expected.to work with no errors' do
-#        pp = <<-EOS
-#          class { 'bash':
-#            package_ensure => 'purged',
-#          }
-#        EOS
-#
-#        apply_manifest(pp, :catch_failures => true)
-#      end
-#
-#      describe package(package_name) do
-#        it { is_expected.not_to be_installed }
-#      end
-#      describe file(config_file_path) do
-#        it { is_expected.not_to be_file }
-#      end
-#    end
+    # context 'when package absent' do
+    #   it 'is_expected.to work with no errors' do
+    #     pp = <<-EOS
+    #       class { 'bash':
+    #         package_ensure => 'absent',
+    #       }
+    #     EOS
+
+    #     apply_manifest(pp, :catch_failures => true)
+    #   end
+
+    #   describe package(package_name) do
+    #     it { is_expected.not_to be_installed }
+    #   end
+    #   describe file(config_file_path) do
+    #     it { is_expected.to be_file }
+    #   end
+    # end
+
+    # context 'when package purged' do
+    #   it 'is_expected.to work with no errors' do
+    #     pp = <<-EOS
+    #       class { 'bash':
+    #         package_ensure => 'purged',
+    #       }
+    #     EOS
+
+    #     apply_manifest(pp, :catch_failures => true)
+    #   end
+
+    #   describe package(package_name) do
+    #     it { is_expected.not_to be_installed }
+    #   end
+    #   describe file(config_file_path) do
+    #     it { is_expected.not_to be_file }
+    #   end
+    # end
   end
 
   describe 'bash::config' do

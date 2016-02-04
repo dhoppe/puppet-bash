@@ -16,11 +16,11 @@ describe 'bash::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_.bashrc').with({
+          is_expected.to contain_file('define_.bashrc').with(
             'ensure'  => 'present',
             'source'  => 'puppet:///modules/bash/wheezy/etc/skel/bashrc',
             'require' => 'Package[bash]',
-          })
+          )
         end
       end
 
@@ -31,11 +31,11 @@ describe 'bash::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_.bashrc').with({
+          is_expected.to contain_file('define_.bashrc').with(
             'ensure'  => 'present',
             'content' => /THIS FILE IS MANAGED BY PUPPET/,
             'require' => 'Package[bash]',
-          })
+          )
         end
       end
 
@@ -46,11 +46,11 @@ describe 'bash::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_.bashrc').with({
+          is_expected.to contain_file('define_.bashrc').with(
             'ensure'  => 'present',
             'content' => /THIS FILE IS MANAGED BY PUPPET/,
             'require' => 'Package[bash]',
-          })
+          )
         end
       end
 
@@ -64,11 +64,11 @@ describe 'bash::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_.bashrc').with({
+          is_expected.to contain_file('define_.bashrc').with(
             'ensure'  => 'present',
             'content' => /THIS FILE IS MANAGED BY PUPPET/,
             'require' => 'Package[bash]',
-          })
+          )
         end
       end
     end
