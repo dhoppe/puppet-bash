@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/dhoppe/puppet-bash.png?branch=master)](https://travis-ci.org/dhoppe/puppet-bash)
 [![Puppet Forge](https://img.shields.io/puppetforge/v/dhoppe/bash.svg)](https://forge.puppetlabs.com/dhoppe/bash)
+[![Puppet Forge](https://img.shields.io/puppetforge/dt/dhoppe/bash.svg)](https://forge.puppetlabs.com/dhoppe/bash)
+[![Puppet Forge](https://img.shields.io/puppetforge/mc/dhoppe.svg)](https://forge.puppetlabs.com/dhoppe)
+[![Puppet Forge](https://img.shields.io/puppetforge/rc/dhoppe.svg)](https://forge.puppetlabs.com/dhoppe)
 
 #### Table of Contents
 
