@@ -20,6 +20,9 @@ describe 'bash', :type => :class do
             is_expected.to contain_package('bash').with(
               'ensure' => 'present',
             )
+            is_expected.to contain_package('bash-completion').with(
+              'ensure' => 'present',
+            )
           end
         end
 
@@ -32,6 +35,9 @@ describe 'bash', :type => :class do
             is_expected.to contain_package('bash').with(
               'ensure' => 'latest',
             )
+            is_expected.to contain_package('bash-completion').with(
+              'ensure' => 'latest',
+            )
           end
         end
 
@@ -42,6 +48,9 @@ describe 'bash', :type => :class do
 
           it do
             is_expected.to contain_package('bash').with(
+              'ensure' => 'absent',
+            )
+            is_expected.to contain_package('bash-completion').with(
               'ensure' => 'absent',
             )
           end
@@ -60,6 +69,9 @@ describe 'bash', :type => :class do
 
           it do
             is_expected.to contain_package('bash').with(
+              'ensure' => 'purged',
+            )
+            is_expected.to contain_package('bash-completion').with(
               'ensure' => 'purged',
             )
           end
