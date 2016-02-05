@@ -3,6 +3,7 @@ require 'spec_helper_acceptance'
 case fact('osfamily')
 when 'Debian'
   package_name     = 'bash'
+  package_list     = 'bash-completion'
   config_dir_path  = '/etc/skel'
   config_file_path = '/etc/skel/.bashrc'
 end
@@ -30,6 +31,9 @@ describe 'bash', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
       describe package(package_name) do
         it { is_expected.to be_installed }
       end
+      describe package(package_list) do
+        it { is_expected.to be_installed }
+      end
     end
 
     context 'when package latest' do
@@ -46,45 +50,54 @@ describe 'bash', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
       describe package(package_name) do
         it { is_expected.to be_installed }
       end
+      describe package(package_list) do
+        it { is_expected.to be_installed }
+      end
     end
 
-#    context 'when package absent' do
-#      it 'is_expected.to work with no errors' do
-#        pp = <<-EOS
-#          class { 'bash':
-#            package_ensure => 'absent',
-#          }
-#        EOS
-#
-#        apply_manifest(pp, :catch_failures => true)
-#      end
-#
-#      describe package(package_name) do
-#        it { is_expected.not_to be_installed }
-#      end
-#      describe file(config_file_path) do
-#        it { is_expected.to be_file }
-#      end
-#    end
-#
-#    context 'when package purged' do
-#      it 'is_expected.to work with no errors' do
-#        pp = <<-EOS
-#          class { 'bash':
-#            package_ensure => 'purged',
-#          }
-#        EOS
-#
-#        apply_manifest(pp, :catch_failures => true)
-#      end
-#
-#      describe package(package_name) do
-#        it { is_expected.not_to be_installed }
-#      end
-#      describe file(config_file_path) do
-#        it { is_expected.not_to be_file }
-#      end
-#    end
+    # context 'when package absent' do
+    #   it 'is_expected.to work with no errors' do
+    #     pp = <<-EOS
+    #       class { 'bash':
+    #         package_ensure => 'absent',
+    #       }
+    #     EOS
+
+    #     apply_manifest(pp, :catch_failures => true)
+    #   end
+
+    #   describe package(package_name) do
+    #     it { is_expected.not_to be_installed }
+    #   end
+    #  describe package(package_list) do
+    #    it { is_expected.not_to be_installed }
+    #  end
+    #   describe file(config_file_path) do
+    #     it { is_expected.to be_file }
+    #   end
+    # end
+
+    # context 'when package purged' do
+    #   it 'is_expected.to work with no errors' do
+    #     pp = <<-EOS
+    #       class { 'bash':
+    #         package_ensure => 'purged',
+    #       }
+    #     EOS
+
+    #     apply_manifest(pp, :catch_failures => true)
+    #   end
+
+    #   describe package(package_name) do
+    #     it { is_expected.not_to be_installed }
+    #   end
+    #  describe package(package_list) do
+    #    it { is_expected.not_to be_installed }
+    #  end
+    #   describe file(config_file_path) do
+    #     it { is_expected.not_to be_file }
+    #   end
+    # end
   end
 
   describe 'bash::config' do
