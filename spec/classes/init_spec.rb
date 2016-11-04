@@ -1,21 +1,19 @@
 require 'spec_helper'
 
 describe 'bash', type: :class do
-  ['Debian'].each do |osfamily|
-    let(:facts) do
-      {
-        osfamily: osfamily
-      }
-    end
+  on_supported_os.each do |os, facts|
+    context "on #{os}" do
+      let(:facts) do
+        facts
+      end
 
-    it { is_expected.to compile.with_all_deps }
-    it { is_expected.to contain_anchor('bash::begin') }
-    it { is_expected.to contain_class('bash::params') }
-    it { is_expected.to contain_class('bash::install') }
-    it { is_expected.to contain_class('bash::config') }
-    it { is_expected.to contain_anchor('bash::end') }
+      it { is_expected.to compile.with_all_deps }
+      it { is_expected.to contain_anchor('bash::begin') }
+      it { is_expected.to contain_class('bash::params') }
+      it { is_expected.to contain_class('bash::install') }
+      it { is_expected.to contain_class('bash::config') }
+      it { is_expected.to contain_anchor('bash::end') }
 
-    context "on #{osfamily}" do
       describe 'bash::install' do
         context 'defaults' do
           it do
