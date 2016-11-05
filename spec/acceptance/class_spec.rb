@@ -8,14 +8,14 @@ when 'Debian'
   config_file_path = '/etc/skel/.bashrc'
 end
 
-describe 'bash', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
+describe 'bash', if: SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
   it 'is_expected.to work with no errors' do
     pp = <<-EOS
       class { 'bash': }
     EOS
 
-    apply_manifest(pp, :catch_failures => true)
-    apply_manifest(pp, :catch_changes => true)
+    apply_manifest(pp, catch_failures: true)
+    apply_manifest(pp, catch_changes: true)
   end
 
   describe 'bash::install' do
@@ -25,7 +25,7 @@ describe 'bash', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           class { 'bash': }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe package(package_name) do
@@ -44,7 +44,7 @@ describe 'bash', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe package(package_name) do
@@ -107,7 +107,7 @@ describe 'bash', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           class { 'bash': }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe file(config_file_path) do
@@ -123,7 +123,7 @@ describe 'bash', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe file(config_file_path) do
@@ -153,7 +153,7 @@ describe 'bash', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe file('/etc/skel/.bash_aliases') do
