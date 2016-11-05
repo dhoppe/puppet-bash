@@ -1,10 +1,11 @@
 # bash
 
 [![Build Status](https://travis-ci.org/dhoppe/puppet-bash.png?branch=master)](https://travis-ci.org/dhoppe/puppet-bash)
+[![Code Coverage](https://coveralls.io/repos/github/dhoppe/puppet-bash/badge.svg?branch=master)](https://coveralls.io/github/dhoppe/puppet-bash)
 [![Puppet Forge](https://img.shields.io/puppetforge/v/dhoppe/bash.svg)](https://forge.puppetlabs.com/dhoppe/bash)
-[![Puppet Forge](https://img.shields.io/puppetforge/dt/dhoppe/bash.svg)](https://forge.puppetlabs.com/dhoppe/bash)
-[![Puppet Forge](https://img.shields.io/puppetforge/mc/dhoppe.svg)](https://forge.puppetlabs.com/dhoppe)
-[![Puppet Forge](https://img.shields.io/puppetforge/rc/dhoppe.svg)](https://forge.puppetlabs.com/dhoppe)
+[![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/dhoppe/bash.svg)](https://forge.puppetlabs.com/dhoppe/bash)
+[![Puppet Forge - endorsement](https://img.shields.io/puppetforge/e/dhoppe/bash.svg)](https://forge.puppetlabs.com/dhoppe/bash)
+[![Puppet Forge - scores](https://img.shields.io/puppetforge/f/dhoppe/bash.svg)](https://forge.puppetlabs.com/dhoppe/bash)
 
 #### Table of Contents
 
