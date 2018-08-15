@@ -65,8 +65,8 @@ class bash (
   validate_re($config_dir_ensure, '^(absent|directory)$')
   validate_re($config_file_ensure, '^(absent|present)$')
 
-  anchor { 'bash::begin': } ->
-  class { '::bash::install': } ->
-  class { '::bash::config': } ->
-  anchor { 'bash::end': }
+  anchor { 'bash::begin': }
+  -> class { '::bash::install': }
+  -> class { '::bash::config': }
+  -> anchor { 'bash::end': }
 }

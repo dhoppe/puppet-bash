@@ -18,10 +18,10 @@ describe 'bash', type: :class do
         context 'defaults' do
           it do
             is_expected.to contain_package('bash').with(
-              'ensure' => 'present'
+              'ensure' => 'present',
             )
             is_expected.to contain_package('bash-completion').with(
-              'ensure' => 'present'
+              'ensure' => 'present',
             )
           end
         end
@@ -29,16 +29,16 @@ describe 'bash', type: :class do
         context 'when package latest' do
           let(:params) do
             {
-              package_ensure: 'latest'
+              package_ensure: 'latest',
             }
           end
 
           it do
             is_expected.to contain_package('bash').with(
-              'ensure' => 'latest'
+              'ensure' => 'latest',
             )
             is_expected.to contain_package('bash-completion').with(
-              'ensure' => 'latest'
+              'ensure' => 'latest',
             )
           end
         end
@@ -46,22 +46,22 @@ describe 'bash', type: :class do
         context 'when package absent' do
           let(:params) do
             {
-              package_ensure: 'absent'
+              package_ensure: 'absent',
             }
           end
 
           it do
             is_expected.to contain_package('bash').with(
-              'ensure' => 'absent'
+              'ensure' => 'absent',
             )
             is_expected.to contain_package('bash-completion').with(
-              'ensure' => 'absent'
+              'ensure' => 'absent',
             )
           end
           it do
             is_expected.to contain_file('bash.conf').with(
               'ensure'  => 'present',
-              'require' => 'Package[bash]'
+              'require' => 'Package[bash]',
             )
           end
         end
@@ -69,22 +69,22 @@ describe 'bash', type: :class do
         context 'when package purged' do
           let(:params) do
             {
-              package_ensure: 'purged'
+              package_ensure: 'purged',
             }
           end
 
           it do
             is_expected.to contain_package('bash').with(
-              'ensure' => 'purged'
+              'ensure' => 'purged',
             )
             is_expected.to contain_package('bash-completion').with(
-              'ensure' => 'purged'
+              'ensure' => 'purged',
             )
           end
           it do
             is_expected.to contain_file('bash.conf').with(
               'ensure'  => 'absent',
-              'require' => 'Package[bash]'
+              'require' => 'Package[bash]',
             )
           end
         end
@@ -95,7 +95,7 @@ describe 'bash', type: :class do
           it do
             is_expected.to contain_file('bash.conf').with(
               'ensure'  => 'present',
-              'require' => 'Package[bash]'
+              'require' => 'Package[bash]',
             )
           end
         end
@@ -103,7 +103,7 @@ describe 'bash', type: :class do
         context 'when source dir' do
           let(:params) do
             {
-              config_dir_source: 'puppet:///modules/bash/wheezy/etc/skel'
+              config_dir_source: 'puppet:///modules/bash/wheezy/etc/skel',
             }
           end
 
@@ -114,7 +114,7 @@ describe 'bash', type: :class do
               'purge'   => false,
               'recurse' => true,
               'source'  => 'puppet:///modules/bash/wheezy/etc/skel',
-              'require' => 'Package[bash]'
+              'require' => 'Package[bash]',
             )
           end
         end
@@ -123,7 +123,7 @@ describe 'bash', type: :class do
           let(:params) do
             {
               config_dir_purge: true,
-              config_dir_source: 'puppet:///modules/bash/wheezy/etc/skel'
+              config_dir_source: 'puppet:///modules/bash/wheezy/etc/skel',
             }
           end
 
@@ -134,7 +134,7 @@ describe 'bash', type: :class do
               'purge'   => true,
               'recurse' => true,
               'source'  => 'puppet:///modules/bash/wheezy/etc/skel',
-              'require' => 'Package[bash]'
+              'require' => 'Package[bash]',
             )
           end
         end
@@ -142,7 +142,7 @@ describe 'bash', type: :class do
         context 'when source file' do
           let(:params) do
             {
-              config_file_source: 'puppet:///modules/bash/wheezy/etc/skel/bashrc'
+              config_file_source: 'puppet:///modules/bash/wheezy/etc/skel/bashrc',
             }
           end
 
@@ -150,7 +150,7 @@ describe 'bash', type: :class do
             is_expected.to contain_file('bash.conf').with(
               'ensure'  => 'present',
               'source'  => 'puppet:///modules/bash/wheezy/etc/skel/bashrc',
-              'require' => 'Package[bash]'
+              'require' => 'Package[bash]',
             )
           end
         end
@@ -158,7 +158,7 @@ describe 'bash', type: :class do
         context 'when content string' do
           let(:params) do
             {
-              config_file_string: '# THIS FILE IS MANAGED BY PUPPET'
+              config_file_string: '# THIS FILE IS MANAGED BY PUPPET',
             }
           end
 
@@ -166,7 +166,7 @@ describe 'bash', type: :class do
             is_expected.to contain_file('bash.conf').with(
               'ensure'  => 'present',
               'content' => %r{THIS FILE IS MANAGED BY PUPPET},
-              'require' => 'Package[bash]'
+              'require' => 'Package[bash]',
             )
           end
         end
@@ -174,7 +174,7 @@ describe 'bash', type: :class do
         context 'when content template' do
           let(:params) do
             {
-              config_file_template: 'bash/wheezy/etc/skel/bashrc.erb'
+              config_file_template: 'bash/wheezy/etc/skel/bashrc.erb',
             }
           end
 
@@ -182,7 +182,7 @@ describe 'bash', type: :class do
             is_expected.to contain_file('bash.conf').with(
               'ensure'  => 'present',
               'content' => %r{THIS FILE IS MANAGED BY PUPPET},
-              'require' => 'Package[bash]'
+              'require' => 'Package[bash]',
             )
           end
         end
@@ -192,8 +192,8 @@ describe 'bash', type: :class do
             {
               config_file_template: 'bash/wheezy/etc/skel/bashrc.erb',
               config_file_options_hash: {
-                'key' => 'value'
-              }
+                'key' => 'value',
+              },
             }
           end
 
@@ -201,7 +201,7 @@ describe 'bash', type: :class do
             is_expected.to contain_file('bash.conf').with(
               'ensure'  => 'present',
               'content' => %r{THIS FILE IS MANAGED BY PUPPET},
-              'require' => 'Package[bash]'
+              'require' => 'Package[bash]',
             )
           end
         end

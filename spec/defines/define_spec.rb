@@ -14,7 +14,7 @@ describe 'bash::define', type: :define do
         let(:params) do
           {
             config_file_path: '/etc/skel/.bashrc.2nd',
-            config_file_source: 'puppet:///modules/bash/wheezy/etc/skel/bashrc'
+            config_file_source: 'puppet:///modules/bash/wheezy/etc/skel/bashrc',
           }
         end
 
@@ -22,7 +22,7 @@ describe 'bash::define', type: :define do
           is_expected.to contain_file('define_.bashrc').with(
             'ensure'  => 'present',
             'source'  => 'puppet:///modules/bash/wheezy/etc/skel/bashrc',
-            'require' => 'Package[bash]'
+            'require' => 'Package[bash]',
           )
         end
       end
@@ -31,7 +31,7 @@ describe 'bash::define', type: :define do
         let(:params) do
           {
             config_file_path: '/etc/skel/.bashrc.3rd',
-            config_file_string: '# THIS FILE IS MANAGED BY PUPPET'
+            config_file_string: '# THIS FILE IS MANAGED BY PUPPET',
           }
         end
 
@@ -39,7 +39,7 @@ describe 'bash::define', type: :define do
           is_expected.to contain_file('define_.bashrc').with(
             'ensure'  => 'present',
             'content' => %r{THIS FILE IS MANAGED BY PUPPET},
-            'require' => 'Package[bash]'
+            'require' => 'Package[bash]',
           )
         end
       end
@@ -48,7 +48,7 @@ describe 'bash::define', type: :define do
         let(:params) do
           {
             config_file_path: '/etc/skel/.bashrc.4th',
-            config_file_template: 'bash/wheezy/etc/skel/bashrc.erb'
+            config_file_template: 'bash/wheezy/etc/skel/bashrc.erb',
           }
         end
 
@@ -56,7 +56,7 @@ describe 'bash::define', type: :define do
           is_expected.to contain_file('define_.bashrc').with(
             'ensure'  => 'present',
             'content' => %r{THIS FILE IS MANAGED BY PUPPET},
-            'require' => 'Package[bash]'
+            'require' => 'Package[bash]',
           )
         end
       end
@@ -67,8 +67,8 @@ describe 'bash::define', type: :define do
             config_file_path: '/etc/skel/.bashrc.5th',
             config_file_template: 'bash/wheezy/etc/skel/bashrc.erb',
             config_file_options_hash: {
-              'key' => 'value'
-            }
+              'key' => 'value',
+            },
           }
         end
 
@@ -76,7 +76,7 @@ describe 'bash::define', type: :define do
           is_expected.to contain_file('define_.bashrc').with(
             'ensure'  => 'present',
             'content' => %r{THIS FILE IS MANAGED BY PUPPET},
-            'require' => 'Package[bash]'
+            'require' => 'Package[bash]',
           )
         end
       end
